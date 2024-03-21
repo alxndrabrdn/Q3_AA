@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title> Alexandra's Anagram </title>
+	</head>
+	<body>
+		<script>
+			var a1 = prompt("Enter the first word/phrase");
+			var a2 = prompt("Enter the second word/phrase");
+		
+			function anagram(input1, input2) {
+				input1 = input1.replace(/[^a-z]/g, '').toLowerCase();
+				input2 = input2.replace(/[^a-z]/g, '').toLowerCase();
+
+				if (input1.length !== input2.length) {
+					return false;
+				}
+				
+				var i1 = input1.split('').sort().join('');
+				var i2 = input2.split('').sort().join('');
+					return i1 === i2;
+				}		
+		
+			var anagram = anagram(a1, a2);
+			if (anagram) {
+				alert("The words/phrases are anagrams.");
+			} else {
+				alert("The words/phrases are not anagrams.");
+			}
+		</script>
+	</body>
+</html>
